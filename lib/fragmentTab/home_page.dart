@@ -15,13 +15,18 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   int _counter = 1;
   var _timer;
 
-  @override
-  void initState() {
-    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
+  void _startTimer() {
+    _timer = Timer.periodic(Duration(seconds: 2), (timer) {
       setState(() {
         _counter++;
       });
     });
+  }
+
+
+  @override
+  void initState() {
+    
     super.initState();
   }
 
@@ -47,8 +52,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('$_counter to`xtatilgan'),
-          SizedBox(height: 10,),
+          Text('$_counter da to`xtatilgan'),
+          const SizedBox(height: 10,),
           Center(
             child: Text('Counter: $_counter'),
           ),
