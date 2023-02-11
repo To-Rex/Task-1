@@ -25,11 +25,8 @@ class _HistoryPageState extends State<HistoryPage> with SingleTickerProviderStat
           backgroundColor: const Color.fromRGBO(33, 158, 188, 10),
         ),
       ),
-      body: Column(
-        children: const [
-          Text(''),
-          //floating button default
-        ],
+      body: Center(
+        child: Text('Hozzircha bo\'sh'),
       ),
     );
   }
