@@ -41,11 +41,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           backgroundColor: const Color.fromRGBO(33, 158, 188, 10),
         ),
       ),
-      body: Column(
-        children: const [
-          Text(''),
-          //floating button default
-        ],
+      body: Center(
+        child: Text('Counter: $_counter'),
       ),
     );
   }
