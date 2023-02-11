@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.topshiriq_task">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
    <application
         android:label="topshiriq_task"
         android:name="${applicationName}"

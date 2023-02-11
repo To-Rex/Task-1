@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+
 }
 
 class MyCounter extends StatefulWidget {
@@ -65,7 +66,7 @@ class _MyCounterState extends State<MyCounter> {
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             activeIcon: Icon(Icons.settings),
-            label: 'Profile',
+            label: 'Settings',
           ),
         ],
         currentIndex: _selectedIndex,
