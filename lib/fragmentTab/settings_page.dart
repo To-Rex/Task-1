@@ -25,7 +25,7 @@ class _SettingPageState extends State<SettingsPage> with SingleTickerProviderSta
           backgroundColor: const Color.fromRGBO(33, 158, 188, 10),
         ),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Settings Hozzircha bo\'sh'),
       ),
     );
