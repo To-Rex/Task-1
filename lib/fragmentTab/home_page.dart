@@ -1,5 +1,5 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:topshiriq_task/main.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,23 +10,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
-  int _counter = 1;
-  var _timer;
-  void startTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
-      _counter++;
-      print('$_counter');
-    });
-  }
-
-  void stopTimer() {
-    setState(() {});
-    _timer.cancel();
-    print('stopTimer');
-  }
-
   @override
   void initState() {
+    setState(() {});
     WidgetsBinding.instance.addObserver(this);
     super.initState();
   }
@@ -34,21 +20,18 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
-    _counter = _counter;
     super.dispose();
   }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
-      print('resumed');
-      stopTimer();
+      setState(() {});
     }else if (state == AppLifecycleState.paused) {
-      print('paused');
-      startTimer();
-      _counter++;
+      setState(() {});
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +42,8 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         ),
       ),
       body: Center(
-        child: Text('Counter: $_counter'),
+        child: Text('Counter: ${MyCounter().getCounter(context)}'
+        ),
       ),
     );
   }
