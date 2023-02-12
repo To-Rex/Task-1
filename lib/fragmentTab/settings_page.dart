@@ -7,7 +7,7 @@ class SettingsPage extends StatefulWidget {
   _SettingPageState createState() => _SettingPageState();
 }
 
-class _SettingPageState extends State<SettingsPage> with SingleTickerProviderStateMixin {
+class _SettingPageState extends State<SettingsPage> {
 
 
   @override

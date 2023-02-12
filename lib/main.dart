@@ -1,14 +1,13 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-
 import 'fragmentTab/history_page.dart';
 import 'fragmentTab/home_page.dart';
 import 'fragmentTab/settings_page.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +16,6 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-
 }
 
 class MyCounter extends StatefulWidget {

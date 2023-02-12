@@ -7,7 +7,7 @@ class HistoryPage extends StatefulWidget {
   _HistoryPageState createState() => _HistoryPageState();
 }
 
-class _HistoryPageState extends State<HistoryPage> with SingleTickerProviderStateMixin {
+class _HistoryPageState extends State<HistoryPage> {
 
 
   @override
