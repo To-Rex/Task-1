@@ -62,7 +62,6 @@ class _MyCounterState extends State<MyCounter> with WidgetsBindingObserver {
   void stopTimer() {
     setState(() {});
     _timer.cancel();
-    print('stopTimer');
   }
 
   @override
