@@ -1,5 +1,28 @@
-import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:topshiriq_task/sample_page.dart';
 
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();      // important
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SamplePage(counter: 0,),
+    );
+  }
+}
+
+/*
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'fragmentTab/history_page.dart';
 import 'fragmentTab/home_page.dart';
@@ -130,4 +153,4 @@ class _MyCounterState extends State<MyCounter> with WidgetsBindingObserver {
       ),
     );
   }
-}
+}*/

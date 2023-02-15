@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../sample_page.dart';
+
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
 
@@ -7,12 +9,39 @@ class SettingsPage extends StatefulWidget {
   _SettingPageState createState() => _SettingPageState();
 }
 
-class _SettingPageState extends State<SettingsPage> {
-
+class _SettingPageState extends State<SettingsPage> with WidgetsBindingObserver {
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(this);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    switch (state) {
+      case AppLifecycleState.resumed:
+        print('resumed');
+        SamplePage(counter: 0).onStop();
+        break;
+      case AppLifecycleState.inactive:
+        print('inactive');
+        break;
+      case AppLifecycleState.paused:
+        print('paused');
+        SamplePage(counter: 0).startService();
+        break;
+      case AppLifecycleState.detached:
+        print('detached');
+        SamplePage(counter: 0).startService();
+        break;
+    }
   }
 
   @override
